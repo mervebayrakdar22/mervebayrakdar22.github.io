@@ -1,0 +1,100 @@
+@import url(https://fonts.googleapis.com/css?family=Karla:400,700&display=swap%27);
+:root{
+--bgColor:#223344;
+--bgcolor:#090a0f;
+--accent-color: #FFF;
+--font:'karla',sans-serif;
+--delay:.3s;
+}
+
+body{
+    margin:0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: var(--font);
+    background-image: url(assest/background.jpg);
+    opacity: 0;
+    animation: 1s ease-out var(--delay) 1 transitionAnimation;
+    animation-fill-mode:forwards;
+    background-repeat:no-repeat;
+    background-size:cover;
+    position: relative;
+}
+#profilePicture, #profilePicture img{
+    position: relative;
+    width: 125px;
+    height: 125px;
+    display: block;
+    margin: radius 50px;
+    -webkit-tap-highlight-color:transparent ;
+
+}
+#username{
+    color: var(--accent-color);
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.25;
+    display: block;
+    font-family: var(--font);
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+#links{
+    max-width: 675px;
+    width: auto;
+    display: block;
+    margin: 27px auto;
+
+}
+.link{
+    position: relative;
+    background-color: transparent;
+    color: var(--accent-color);
+    border: solid var(--accent-color);
+    border-radius: 10px;
+    font-size: 1rem;
+    text-align: center;
+    display: block;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-decoration: none;
+    -webkit-tap-highlight-color:transparent ;
+
+
+}
+@media (hover:hover){
+    .link:hover{
+        background-color: var(--accent-color);
+        color: var(--bgColor);
+    }
+
+}
+.link:active{
+    background-color: var(--accent-color);
+    color: var(--bgColor);
+}
+.overlay{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    bottom:0;
+    left: 0;
+    right: 0;
+    background-color: crimson;
+    z-index: 2;
+    visibility: hidden;
+    transition: .5s ease-in-out;
+}
+.overlay:target{
+    visibility: visible;
+    opacity: 1;
+}
+.overlay:target .popup{
+    transform: scale(1);
+    top: 0;
+}
